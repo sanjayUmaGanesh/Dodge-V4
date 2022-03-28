@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DODGE</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="./Components/infinite.js"></script>
+        <script src="./Components/obstacle.js"></script>
+        <script src="./Components/movement.js"></script>
+    </head>
+    <body>
+        
+        <a-scene id = "scene" background="color:white" physics>
+            <a-entity 
+                id = "player-camera"
+                player-controls 
+                camera 
+                look-controls
+                position = "-1.2 4 0"
+                static-body
+                summonObstacle
+                movement
+                
+            >
+            
+            <a-entity
+            id="run"
+            gltf-model="#hand"
+            position="-0.001 -0.001 -0.001"
+            rotation="0 180 0"
+            scale="0.001 0.001 0.001"          
+          >
+            </a-entity>
+          </a-entity>
+          
+          <a-entity id = "Box" position="3 1 100">
+          <a-box  color = "red" width = "100" height = "5" dynamic-body = "mass:0" infinite >
+            
+          </a-box>
+        </a-entity>
+            <a-assets>
+                <a-asset-item id = "obst1" src = "./assets/models/Barricade/Barricade.glb"></a-asset-item>
+                <a-asset-item id = "obst2" src = "./assets/models/Bird/Terrifying birdie.glb"></a-asset-item>
+                <a-asset-item id = "obst3" src = "./assets/models/Coin/Coin.glb"></a-asset-item>
+                <a-asset-item id = "obst4" src = "./assets/models/Lamp post/Lamp post.glb"></a-asset-item>
+                <a-asset-item id = "obst5" src = "./assets/models/Obstacle/Obstacle.glb"></a-asset-item>
+                <a-asset-item id = "obst6" src = "./assets/models/Tracks/tracks.glb"></a-asset-item>
+                <a-asset-item id = "hand" src = "./assets/models/hand/scene.gltf"></a-asset-item>
+                <!-- <a-asset-item id = "handbin" src = "./assets/models/hand/scene.bin"></a-asset-item> -->
+            </a-assets>
+
+        </a-scene>
+    </body>
+</html>
